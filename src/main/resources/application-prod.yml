@@ -1,0 +1,41 @@
+### 全局生产环境配置文件 ###
+
+# spring
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.10:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: pwd@123QWE
+    hikari: # HikariCP连接池(spring boot默认连接池)
+      connection-timeout: 30000 # 连接超时时间 (毫秒)，默认 30000 (30秒)
+      idle-timeout: 600000 # 空闲连接超时时间 (毫秒)，默认 600000 (10分钟)
+      max-lifetime: 1800000 # 连接最大存活时间 (毫秒)，默认 1800000 (30分钟)。注意：MySQL 通常建议小于 wait_timeout
+      minimum-idle: 10 # 最小空闲连接数，默认 10
+      maximum-pool-size: 200 # 最大连接数 (包括空闲和使用中的)，默认 10。根据应用负载调整
+      pool-name: Hikari # 连接池名称，方便监控
+      auto-commit: true # 是否自动提交事务，默认 true
+      connection-test-query: SELECT 1 # 简单的测试 SQL (MySQL, PostgreSQL, H2等适用)
+      validation-timeout: 5000 # 验证查询超时时间 (毫秒)，默认 5000
+  cache:
+    type: redis # 缓存类型
+    redis:
+      time-to-live: 7d # 缓存过期时间（60秒配置60s，24小时配置24h）
+      cache-null-values: false # 是否缓存空值（防击穿）
+      enable-statistics: false # 启用缓存统计
+      use-key-prefix: true # 启用键前缀
+      key-prefix: "app-cache:" # 统一前缀（防键冲突）
+  data:
+    redis:
+      host: 192.168.0.10 # Redis服务器地址
+      port: 6379 # Redis服务器连接端口（默认为6379）
+      password: pwd@123QWE # Redis服务器连接密码
+      database: 0  # Redis数据库索引（默认为0）
+      timeout: 10000ms # 连接超时时间（毫秒）
+      lettuce:
+        pool:
+          enabled: true # 是否启用连接池
+          max-active: 128 # 连接池最大连接数（使用负值表示没有限制，默认为8）
+          max-wait: -1ms # 连接池最大阻塞等待时间（使用负值表示没有限制，默认为-1ms）
+          max-idle: 8 # 连接池中的最大空闲连接（使用负值表示没有限制，默认为8）
+          min-idle: 4 # 连接池中的最小空闲连接（认为0）
