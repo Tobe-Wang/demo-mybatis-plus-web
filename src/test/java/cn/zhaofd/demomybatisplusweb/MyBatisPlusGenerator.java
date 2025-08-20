@@ -17,7 +17,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_user";
+    private static final String tables = "sys_param";
     /**
      * 数据源配置
      * 【读取表注释配置】
@@ -84,16 +84,21 @@ public class MyBatisPlusGenerator {
                 })
                 // 策略配置
                 .strategyConfig(builder -> {
-                    builder.addInclude(Arrays.asList(tables.split(","))) // 设置需要生成的表名
+                    builder.enableSkipView() // 在生成代码时自动跳过数据库视图
+                            .addInclude(Arrays.asList(tables.split(","))) // 设置需要生成的表名
 //                            .addTablePrefix("t_", "c_") // 设置过滤表前缀
-                            .enableSkipView() // 开启跳过视图
                             // Entity策略配置
                             .entityBuilder() // 启用Entity策略配置
                             .enableLombok() // 启用Lombok
-                            .enableTableFieldAnnotation() // 启用字段注解
+                            .enableTableFieldAnnotation() // 开启生成实体时生成字段注解
+//                            .versionColumnName("") // 乐观锁字段名(数据库字段)
+//                            .versionPropertyName("") // 乐观锁属性名(实体)
+                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
+                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
                             // Controller策略配置
                             .controllerBuilder() // 启用Controller策略配置
-                            .enableRestStyle() // 启用REST风格
+                            .enableHyphenStyle() // 开启驼峰转连字符
+                            .enableRestStyle() // 开启生成@RestController 控制器
                     ;
                 })
                 // 自定义模板支持配置
