@@ -61,7 +61,6 @@ public class MyBatisPlusGenerator {
 //                    // 自定义类型转换
 //                    int typeCode = metaInfo.getJdbcType().TYPE_CODE;
 //                    if (typeCode == Types.SMALLINT) {
-//
 //                        return DbColumnType.INTEGER;
 //                    }
                     return typeRegistry.getColumnType(metaInfo);
