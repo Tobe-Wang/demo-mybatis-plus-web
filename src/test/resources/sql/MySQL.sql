@@ -5,12 +5,12 @@ use demo;
 -- 表
 drop table if exists sys_user;
 create table sys_user(
-    id int not null auto_increment,
-    name varchar(10),
-    sex varchar(1),
-    regtime datetime,
+    id int not null auto_increment comment '主键',
+    name varchar(10) comment '姓名',
+    sex varchar(1) comment '性别',
+    regtime datetime comment '登记时间',
     primary key (id)
-);
+) comment='系统用户';
 
 -- truncate table sys_user;
 insert into sys_user(id, name, sex, regtime) values(1, '张三', '1', '2020-01-01 01:01:01'), (2, '李四', '2', '2022-02-02 02:02:02');
