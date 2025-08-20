@@ -51,7 +51,8 @@ public class MyBatisPlusGenerator {
         FastAutoGenerator.create(url, username, password)
                 // 全局配置
                 .globalConfig(builder -> {
-                    builder.author(author) // 设置作者
+                    builder.disableOpenDir() // 禁止自动打开输出目录
+                            .author(author) // 设置作者
 //                            .enableSwagger() // 开启swagger模式
                             .outputDir(outputDir) // 指定输出目录
 //                            .commentDate("yyyy-MM-dd") // 注释日期
