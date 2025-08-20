@@ -67,6 +67,20 @@
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
             <version>3.5.12</version>
         </dependency>
+        <!-- MyBatis-Plus代码生成器 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- MyBatis-Plus代码生成器模板引擎 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.34</version>
+            <scope>test</scope>
+        </dependency>
         <!-- MyBatis结束 -->
 
         <!-- core开始 -->
