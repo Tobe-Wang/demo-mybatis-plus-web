@@ -2,7 +2,7 @@
  * Copyright (c) 2025. Tobe Wang
  */
 
-package cn.zhaofd.demomybatisplusweb.modules.demo.dto;
+package cn.zhaofd.demomybatisplusweb.modules.demo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;

@@ -8,9 +8,9 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * MyBatis配置类s
+ * MyBatis-Plus配置类
  */
 @Configuration
-@MapperScan("cn.zhaofd.demomybatisplusweb.modules.demo.repository")
+@MapperScan("cn.zhaofd.demomybatisplusweb.modules.demo.mapper")
 public class MyBatisPlusConfig {
 }

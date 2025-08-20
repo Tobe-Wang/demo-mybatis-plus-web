@@ -2,9 +2,9 @@
  * Copyright (c) 2025. Tobe Wang
  */
 
-package cn.zhaofd.demomybatisplusweb.modules.demo.repository;
+package cn.zhaofd.demomybatisplusweb.modules.demo.mapper;
 
-import cn.zhaofd.demomybatisplusweb.modules.demo.dto.SysInfo;
+import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,14 +13,14 @@ import org.springframework.util.Assert;
 import java.util.List;
 
 @SpringBootTest
-class SysInfoRepositoryTest {
+class SysInfoMapperTest {
     @Autowired
-    private SysInfoRepository sysInfoRepository;
+    private SysInfoMapper sysInfoMapper;
 
     @Test
     void selectList() {
-        List<SysInfo> userList = sysInfoRepository.selectList(null);
-        Assert.notEmpty(userList, "用户列表为空");
+        List<SysInfo> userList = sysInfoMapper.selectList(null);
         userList.forEach(System.out::println);
+        Assert.notEmpty(userList, "用户列表为空");
     }
 }

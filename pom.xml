@@ -14,7 +14,7 @@
     </parent>
     <groupId>cn.zhaofd</groupId>
     <artifactId>demo-mybatis-plus-web</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>demo-mybatis-plus-web</name>
     <description>使用示例-Spring MyBatis-Plus</description>
     <properties>
@@ -74,13 +74,13 @@
         <dependency>
             <groupId>cn.zhaofd</groupId>
             <artifactId>core-spring-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <!-- core-spring-validation -->
         <dependency>
             <groupId>cn.zhaofd</groupId>
             <artifactId>core-spring-validation</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <!-- core结束 -->
 
