@@ -1,0 +1,97 @@
+/*
+ * Copyright (c) 2025. Tobe Wang
+ */
+
+package cn.zhaofd.demomybatisplusweb;
+
+import com.baomidou.mybatisplus.generator.FastAutoGenerator;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+
+import java.util.Arrays;
+
+/**
+ * MyBatis-Plus代码生成器
+ */
+public class MyBatisPlusGenerator {
+    /**
+     * 需要生成的表名(多个以英文逗号分隔)
+     * ★注意：代码生成前需配置★
+     */
+    private static final String tables = "sys_user";
+    /**
+     * 数据源配置
+     * 【读取表注释配置】
+     * 1、MySQL链接增加属性：remarks=true&useInformationSchema=true
+     * 2、Oracle链接增加属性：remarks=true或者remarksReporting=true（某些驱动版本）
+     * 3、SqlServer：驱动不支持
+     */
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&remarks=true&useInformationSchema=true";
+    /**
+     * 数据源用户名
+     */
+    private static final String username = "root";
+    /**
+     * 数据源密码
+     */
+    private static final String password = "pwd@123QWE";
+    /**
+     * 作者
+     */
+    private static final String author = "zhaofd";
+    /**
+     * 输出目录
+     */
+    private static final String outputDir = "src\\main\\java";
+//    private static final String outputDir = "E:\\011Code\\021core\\demo-mybatis-plus-web\\src\\main\\java";
+
+    /**
+     * 代码生成
+     */
+    public static void main(String[] args) {
+        FastAutoGenerator.create(url, username, password)
+                // 全局配置
+                .globalConfig(builder -> {
+                    builder.author(author) // 设置作者
+//                            .enableSwagger() // 开启swagger模式
+                            .outputDir(outputDir) // 指定输出目录
+//                            .commentDate("yyyy-MM-dd") // 注释日期
+                    ;
+                }).dataSourceConfig(builder -> builder.typeConvertHandler((globalConfig, typeRegistry, metaInfo) -> {
+//                    // 自定义类型转换
+//                    int typeCode = metaInfo.getJdbcType().TYPE_CODE;
+//                    if (typeCode == Types.SMALLINT) {
+//
+//                        return DbColumnType.INTEGER;
+//                    }
+                    return typeRegistry.getColumnType(metaInfo);
+                }))
+                // 包配置
+                .packageConfig(builder -> {
+                    builder.parent("cn.zhaofd.demomybatisplusweb.modules") // 设置父包名，默认值: com.baomidou
+                            .moduleName("demo") // 设置父包模块名，默认值: 无
+                            .entity("entity") // 设置实体类包名，默认值: entity
+                            .mapper("mapper") // 设置Mapper接口包名，默认值: mapper
+                            .xml("mapper.xml") // 设置Mapper XML文件包名，默认值: mapper.xml
+                            .service("service") // 设置Service接口包名，默认值: service
+                            .serviceImpl("service.impl") // 设置Service实现类包名，默认值: service.impl
+                            .controller("web") // 设置Controller包名，默认值: controller
+//                            .pathInfo(Collections.singletonMap(OutputFile.xml, "D://")) // 设置Mapper XML生成路径
+                    ;
+                })
+                // 策略配置
+                .strategyConfig(builder -> {
+                    builder.addInclude(Arrays.asList(tables.split(","))) // 设置需要生成的表名
+//                            .addTablePrefix("t_", "c_") // 设置过滤表前缀
+                            .enableSkipView() // 开启跳过视图
+                            // Entity策略配置
+                            .entityBuilder() // 启用Entity策略配置
+                            .enableLombok() // 启用Lombok
+                            .enableTableFieldAnnotation() // 启用字段注解
+                            // Controller策略配置
+                            .controllerBuilder() // 启用Controller策略配置
+                            .enableRestStyle() // 启用REST风格
+                    ;
+                }).templateEngine(new FreemarkerTemplateEngine()) // 设置模板引擎，包括：VelocityTemplateEngine(默认)、FreemarkerTemplateEngine、BeetlTemplateEngine、EnjoyTemplateEngine
+                .execute();
+    }
+}
