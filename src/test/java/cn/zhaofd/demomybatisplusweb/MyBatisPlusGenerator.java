@@ -19,6 +19,16 @@ public class MyBatisPlusGenerator {
      */
     private static final String tables = "sys_param";
     /**
+     * 父包名
+     * ★注意：代码生成前需配置★
+     */
+    private static final String parentPackage = "cn.zhaofd.demomybatisplusweb.modules";
+    /**
+     * 模块名
+     * ★注意：代码生成前需配置★
+     */
+    private static final String moduleName = "demo";
+    /**
      * 数据源配置
      * 【读取表注释配置】
      * 1、MySQL链接增加属性：remarks=true&useInformationSchema=true
@@ -71,8 +81,8 @@ public class MyBatisPlusGenerator {
                 })
                 // 包配置
                 .packageConfig(builder -> {
-                    builder.parent("cn.zhaofd.demomybatisplusweb.modules") // 设置父包名，默认值: com.baomidou
-                            .moduleName("demo") // 设置父包模块名，默认值: 无
+                    builder.parent(parentPackage) // 设置父包名，默认值: com.baomidou
+                            .moduleName(moduleName) // 设置父包模块名，默认值: 无
                             .entity("entity") // 设置实体类包名，默认值: entity
                             .mapper("mapper") // 设置Mapper接口包名，默认值: mapper
                             .xml("mapper.xml") // 设置Mapper XML文件包名，默认值: mapper.xml
@@ -93,8 +103,8 @@ public class MyBatisPlusGenerator {
                             .enableTableFieldAnnotation() // 开启生成实体时生成字段注解
 //                            .versionColumnName("") // 乐观锁字段名(数据库字段)
 //                            .versionPropertyName("") // 乐观锁属性名(实体)
-                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
-                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
+//                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
+//                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
                             // Controller策略配置
                             .controllerBuilder() // 启用Controller策略配置
 //                            .enableHyphenStyle() // 开启驼峰转连字符
