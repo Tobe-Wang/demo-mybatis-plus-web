@@ -77,8 +77,8 @@ public class MyBatisPlusGenerator {
                             .mapper("mapper") // 设置Mapper接口包名，默认值: mapper
                             .xml("mapper.xml") // 设置Mapper XML文件包名，默认值: mapper.xml
 //                            .pathInfo(Collections.singletonMap(OutputFile.xml, "src\\main\\resources\\mapper")) // 设置Mapper XML生成路径，与.xml()设置互斥
-                            .service("service") // 设置Service接口包名，默认值: service
-                            .serviceImpl("service.impl") // 设置Service实现类包名，默认值: service.impl
+                            .service("service.intf") // 设置Service接口包名，默认值: service
+                            .serviceImpl("service") // 设置Service实现类包名，默认值: service.impl
                             .controller("web") // 设置Controller包名，默认值: controller
                     ;
                 })
