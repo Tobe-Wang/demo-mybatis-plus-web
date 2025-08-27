@@ -12,6 +12,9 @@ import org.springframework.util.Assert;
 
 import java.util.List;
 
+/**
+ * 手动配置的MyBatis-Plus应用示例测试
+ */
 @SpringBootTest
 class SysInfoMapperTest {
     @Autowired
