@@ -75,7 +75,7 @@ public class MyBatisPlusGenerator {
                     builder.disableOpenDir() // 禁止自动打开输出目录
                             .outputDir(outputDir) // 指定代码生成的输出目录
                             .author(author) // 设置作者名
-//                            .enableSwagger() // 开启swagger模式
+//                            .enableSwagger() // 开启swagger模式，自动生成api注解
 //                            .commentDate("yyyy-MM-dd") // 设置注释日期格式，默认值yyyy-MM-dd
                     ;
                 })
