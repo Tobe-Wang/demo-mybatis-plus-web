@@ -107,7 +107,7 @@ public class MyBatisPlusGenerator {
 //                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
                             // Controller策略配置
                             .controllerBuilder() // 启用Controller策略配置
-//                            .enableHyphenStyle() // 开启驼峰转连字符
+                            .enableHyphenStyle() // 开启驼峰转连字符，请求路径中单词之间使用连字符。例@RequestMapping("/demo/sys-param")
                             .enableRestStyle() // 开启生成@RestController 控制器
                     ;
                 })
