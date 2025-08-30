@@ -39,3 +39,8 @@ spring:
           max-wait: -1ms # 连接池最大阻塞等待时间（使用负值表示没有限制，默认为-1ms）
           max-idle: 4 # 连接池中的最大空闲连接（使用负值表示没有限制，默认为8）
           min-idle: 1 # 连接池中的最小空闲连接（认为0）
+
+# mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 控制台打印SQL

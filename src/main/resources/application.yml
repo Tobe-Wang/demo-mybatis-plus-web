@@ -38,3 +38,9 @@ server:
       timeout: 30 # 用户会话session过期时间，默认30分钟
   tomcat:
     uri-encoding: UTF-8 # Tomcat的URI编码，默认:UTF-8
+
+# mybatis-plus
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true # 配置是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。
+    local-cache-scope: statement # Mybatis一级缓存，默认为session。session：同一个Session相同查询语句不会再次查询数据库；statement：关闭一级缓存(微服务架构中需要关闭一级缓存)
