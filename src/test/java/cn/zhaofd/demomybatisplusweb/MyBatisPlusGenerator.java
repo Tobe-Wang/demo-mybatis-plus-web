@@ -105,6 +105,10 @@ public class MyBatisPlusGenerator {
 //                            .versionPropertyName("") // 乐观锁属性名(实体)
 //                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
 //                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
+                            // Service策略配置
+                            .serviceBuilder() // 启用Service策略配置
+                            .formatServiceFileName("%sService") // Service接口文件名格式
+//                            .formatServiceImplFileName("%sServiceImpl") // Service实现类文件名格式
                             // Controller策略配置
                             .controllerBuilder() // 启用Controller策略配置
                             .enableHyphenStyle() // 开启驼峰转连字符，请求路径中单词之间使用连字符。例@RequestMapping("/demo/sys-param")
