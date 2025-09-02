@@ -31,6 +31,12 @@ public class MyBatisPlusGenerator {
      */
     private static final String moduleName = "demo";
     /**
+     * Mapper XML生成路径
+     * ★注意：代码生成前需配置★
+     */
+    private static final String pathInfo = "src\\main\\resources\\mapper\\demo";
+
+    /**
      * 数据源配置
      * 【读取表注释配置】
      * 1、MySQL链接增加属性：remarks=true&useInformationSchema=true
@@ -88,7 +94,7 @@ public class MyBatisPlusGenerator {
                             .entity("entity") // 设置实体类包名，默认值: entity
                             .mapper("mapper") // 设置Mapper接口包名，默认值: mapper
 //                            .xml("mapper.xml") // 设置Mapper XML文件包名，默认值: mapper.xml
-                            .pathInfo(Collections.singletonMap(OutputFile.xml, "src\\main\\resources\\mapper\\demo")) // 设置Mapper XML生成路径，与.xml()设置互斥
+                            .pathInfo(Collections.singletonMap(OutputFile.xml, pathInfo)) // 设置Mapper XML生成路径，与.xml()设置互斥
                             .service("service.intf") // 设置Service接口包名，默认值: service
                             .serviceImpl("service") // 设置Service实现类包名，默认值: service.impl
                             .controller("web") // 设置Controller包名，默认值: controller
