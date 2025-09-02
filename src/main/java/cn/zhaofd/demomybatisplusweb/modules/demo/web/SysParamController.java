@@ -5,8 +5,8 @@
 package cn.zhaofd.demomybatisplusweb.modules.demo.web;
 
 import cn.zhaofd.core.net.exception.HttpException;
+import cn.zhaofd.core.spring.mybatisplus.core.entity.DataSet;
 import cn.zhaofd.core.spring.validation.ValidationUtil;
-import cn.zhaofd.demomybatisplusweb.core.dto.DataSet;
 import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysParam;
 import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysUser;
 import cn.zhaofd.demomybatisplusweb.modules.demo.service.intf.SysParamService;
