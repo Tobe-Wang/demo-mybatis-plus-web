@@ -17,7 +17,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_param";
+    private static final String tables = "sys_user";
     /**
      * 父包名
      * ★注意：代码生成前需配置★
@@ -111,7 +111,7 @@ public class MyBatisPlusGenerator {
 //                            .formatServiceImplFileName("%sServiceImpl") // Service实现类文件名格式
                             // Controller策略配置
                             .controllerBuilder() // 启用Controller策略配置
-                            .enableHyphenStyle() // 开启驼峰转连字符，请求路径中单词之间使用连字符。例@RequestMapping("/demo/sys-param")
+//                            .enableHyphenStyle() // 开启驼峰转连字符，请求路径中单词之间使用连字符。例@RequestMapping("/demo/sys-param")
                             .enableRestStyle() // 开启生成@RestController 控制器
                     ;
                 })
