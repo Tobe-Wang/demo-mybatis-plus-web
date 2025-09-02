@@ -4,12 +4,18 @@
 
 package cn.zhaofd.demomybatisplusweb;
 
+import cn.zhaofd.core.spring.mybatisplus.core.service.BaseServiceImpl;
+import cn.zhaofd.core.spring.mybatisplus.core.service.intf.BaseService;
+import cn.zhaofd.core.spring.mybatisplus.core.web.BaseController;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
+import com.baomidou.mybatisplus.generator.config.builder.CustomFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 /**
  * MyBatis-Plus代码生成器
@@ -19,7 +25,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_user";
+    private static final String tables = "sys_address";
     /**
      * 父包名
      * ★注意：代码生成前需配置★
@@ -105,23 +111,65 @@ public class MyBatisPlusGenerator {
                     builder.enableSkipView() // 在生成代码时自动跳过数据库视图
                             .addInclude(Arrays.asList(tables.split(","))) // 设置需要生成的表名
 //                            .addTablePrefix("t_", "c_") // 设置过滤表前缀
-                            // Entity策略配置
-                            .entityBuilder() // 启用Entity策略配置
+                    ;
+
+                    // Entity策略配置
+                    builder.entityBuilder() // 启用Entity策略配置
                             .enableLombok() // 启用Lombok
                             .enableTableFieldAnnotation() // 开启生成实体时生成字段注解
 //                            .versionColumnName("") // 乐观锁字段名(数据库字段)
 //                            .versionPropertyName("") // 乐观锁属性名(实体)
 //                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
 //                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
-                            // Service策略配置
-                            .serviceBuilder() // 启用Service策略配置
-                            .formatServiceFileName("%sService") // Service接口文件名格式
-//                            .formatServiceImplFileName("%sServiceImpl") // Service实现类文件名格式
-                            // Controller策略配置
-                            .controllerBuilder() // 启用Controller策略配置
+                    ;
+
+                    // Service策略配置
+                    builder.serviceBuilder() // 启用Service策略配置
+                            .superServiceClass(BaseService.class) // 【自定义】Service接口父类，不设置则使用MyBatis-Plus提供的Service接口
+                            .superServiceImplClass(BaseServiceImpl.class) // 【自定义】Service实现类父类，不设置则使用MyBatis-Plus提供的ServiceImpl父类
+                            .formatServiceFileName("%sService") // Service接口文件名格式，默认值：I%sService
+//                            .formatServiceImplFileName("%sServiceImpl") // Service实现类文件名格式，默认值：%sServiceImpl
+                    ;
+
+                    // Controller策略配置
+                    builder.controllerBuilder() // 启用Controller策略配置
+                            .superClass(BaseController.class) // 【自定义】Controller父类，不设置则使用MyBatis-Plus提供的Controller父类
 //                            .enableHyphenStyle() // 开启驼峰转连字符，请求路径中单词之间使用连字符。例@RequestMapping("/demo/sys-param")
                             .enableRestStyle() // 开启生成@RestController 控制器
+                            .disable() // 禁用默认生成，使用注入配置中的customFile指定模板生成
                     ;
+                })
+                // 注入配置
+                .injectionConfig(builder -> {
+                    // 输出文件之前执行：动态设置Controller的import和泛型参数
+                    builder.beforeOutputFile((tableInfo, objectMap) -> {
+                        // 获取包配置信息
+                        //noinspection unchecked
+                        Map<String, String> packageConfig = (Map<String, String>) objectMap.get("package");
+                        String entityPackage = packageConfig.get("Entity"); // 获取entity包路径
+                        String servicePackage = packageConfig.get("Service"); // 获取service包路径
+                        // 获取实体类名
+                        String entityName = tableInfo.getEntityName();
+
+                        // 按项目配置自定义构建
+                        String serviceName = entityName + "Service"; // 构建Service类名
+                        String entityClass = entityPackage + "." + entityName; // 构建Entity类路径
+                        String serviceClass = servicePackage + "." + serviceName; // 构建Service类路径
+
+                        // 设置Controller父类泛型
+                        String superClass = String.format("BaseController<%s, %s>", serviceName, entityName); // 替换Controller父类中的占位符
+                        objectMap.put("superControllerClass", superClass);
+
+                        // 设置Controller类导入包的自定义属性
+                        List<String> importControllerPackages = Arrays.asList(entityClass, serviceClass);
+                        objectMap.put("importControllerPackages", importControllerPackages);
+                    });
+
+                    // 自定义配置模板文件
+                    builder.customFile(new CustomFile.Builder().fileName("Controller.java") // 文件名称
+                            .templatePath("/templates/controller.java.ftl") // 指定生成模板路径
+                            .packageName("web") // 包名,自3.5.10开始，可通过在package里面获取自定义包全路径
+                            .build());
                 })
                 // 自定义模板支持配置
                 .templateEngine(new FreemarkerTemplateEngine()) // 设置模板引擎，包括：VelocityTemplateEngine(默认)、FreemarkerTemplateEngine、BeetlTemplateEngine、EnjoyTemplateEngine
