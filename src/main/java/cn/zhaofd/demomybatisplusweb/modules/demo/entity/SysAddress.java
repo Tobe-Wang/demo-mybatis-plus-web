@@ -12,11 +12,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例
  * </p>
  *
  * @author zhaofd
@@ -27,7 +28,7 @@ import java.io.Serializable;
 @ToString
 @TableName("sys_address")
 public class SysAddress implements Serializable {
-
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
