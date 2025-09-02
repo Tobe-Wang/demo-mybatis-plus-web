@@ -20,7 +20,7 @@ spring:
   cache:
     type: redis # 缓存类型
     redis:
-      time-to-live: 7d # 缓存过期时间（60秒配置60s，24小时配置24h）
+      time-to-live: 24h # 缓存过期时间（60秒配置60s，24小时配置24h，7天配置7d）
       cache-null-values: false # 是否缓存空值（防击穿）
       enable-statistics: false # 启用缓存统计
       use-key-prefix: true # 启用键前缀
