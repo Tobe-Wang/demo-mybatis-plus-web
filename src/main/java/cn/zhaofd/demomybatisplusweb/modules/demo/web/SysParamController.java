@@ -29,7 +29,7 @@ import java.util.Map;
  * @since 2025-08-30
  */
 @RestController
-@RequestMapping("/demo/sys-param")
+@RequestMapping("/demo/sysParam")
 public class SysParamController {
     private final SysParamService sysParamService;
 
