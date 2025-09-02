@@ -14,6 +14,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -30,7 +31,7 @@ import java.time.LocalDateTime;
 @ToString
 @TableName("sys_param")
 public class SysParam implements Serializable {
-
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
