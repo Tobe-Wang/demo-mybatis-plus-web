@@ -19,6 +19,7 @@ import java.util.List;
  * <p>
  * 系统用户 前端控制器
  * </p>
+ * 直接调用“MyBatis-Plus代码生成器”代码应用示例+手动xml方式配置的MyBatis应用示例
  *
  * @author zhaofd
  * @since 2025-09-02
