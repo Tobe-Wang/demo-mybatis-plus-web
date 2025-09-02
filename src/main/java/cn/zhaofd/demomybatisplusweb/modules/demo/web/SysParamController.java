@@ -8,6 +8,7 @@ import cn.zhaofd.core.net.exception.HttpException;
 import cn.zhaofd.core.spring.validation.ValidationUtil;
 import cn.zhaofd.demomybatisplusweb.core.dto.DataSet;
 import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysParam;
+import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysUser;
 import cn.zhaofd.demomybatisplusweb.modules.demo.service.intf.SysParamService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +18,14 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 /**
  * <p>
  *  前端控制器
  * </p>
- * 直接调用“MyBatis-Plus代码生成器”代码应用示例
+ * 直接调用“MyBatis-Plus代码生成器”代码应用示例+注解方式配置的MyBatis应用示例
  *
  * @author zhaofd
  * @since 2025-08-30
@@ -169,5 +171,16 @@ public class SysParamController {
     @DeleteMapping(value = "/{id}")
     public void removeById(@PathVariable("id") Integer id) {
         sysParamService.removeById(id);
+    }
+
+    /**
+     * 调用存储过程
+     *
+     * @param name 姓名
+     * @return {@code List<SysUser>}
+     */
+    @GetMapping(value = "/procUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<SysUser> procUser(@RequestParam String name) {
+        return sysParamService.procUser(name);
     }
 }

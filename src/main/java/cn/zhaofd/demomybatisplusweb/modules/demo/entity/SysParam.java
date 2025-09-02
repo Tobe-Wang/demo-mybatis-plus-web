@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 直接调用“MyBatis-Plus代码生成器”代码应用示例
+ * 直接调用“MyBatis-Plus代码生成器”代码应用示例+注解方式配置的MyBatis应用示例
  * </p>
  *
  * @author zhaofd
