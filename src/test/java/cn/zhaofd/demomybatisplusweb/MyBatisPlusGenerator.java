@@ -5,9 +5,11 @@
 package cn.zhaofd.demomybatisplusweb;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
+import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * MyBatis-Plus代码生成器
@@ -85,8 +87,8 @@ public class MyBatisPlusGenerator {
                             .moduleName(moduleName) // 设置父包模块名，默认值: 无
                             .entity("entity") // 设置实体类包名，默认值: entity
                             .mapper("mapper") // 设置Mapper接口包名，默认值: mapper
-                            .xml("mapper.xml") // 设置Mapper XML文件包名，默认值: mapper.xml
-//                            .pathInfo(Collections.singletonMap(OutputFile.xml, "src\\main\\resources\\mapper")) // 设置Mapper XML生成路径，与.xml()设置互斥
+//                            .xml("mapper.xml") // 设置Mapper XML文件包名，默认值: mapper.xml
+                            .pathInfo(Collections.singletonMap(OutputFile.xml, "src\\main\\resources\\mapper\\demo")) // 设置Mapper XML生成路径，与.xml()设置互斥
                             .service("service.intf") // 设置Service接口包名，默认值: service
                             .serviceImpl("service") // 设置Service实现类包名，默认值: service.impl
                             .controller("web") // 设置Controller包名，默认值: controller
