@@ -18,13 +18,12 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan("cn.zhaofd.demomybatisplusweb.modules.demo.mapper") // Spring Boot官方文档明确推荐使用@MapperScan方式，不推荐接口上注释@Mapper方式(单独初始化，当有大量@Mapper时（50+），启动时间显著增加)
 public class MyBatisPlusConfig {
     /**
-     * 添加分页插件
+     * 添加插件
      */
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-        // 如果有多数据源可以不配具体类型, 否则都建议配上具体的DbType
-        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL)); // 如果配置多个插件, 切记分页最后添加
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL)); // 【分页插件】如果配置多个插件, 切记分页最后添加；如果有多数据源可以不配具体类型, 否则都建议配上具体的DbType
         return interceptor;
     }
 }
