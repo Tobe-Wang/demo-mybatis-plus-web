@@ -31,6 +31,6 @@ public class SysParamServiceImpl extends ServiceImpl<SysParamMapper, SysParam> i
      * @return {@code List<SysUser>}
      */
     public List<SysUser> procUser(String name) {
-        return baseMapper.procUser(name);
+        return super.baseMapper.procUser(name);
     }
 }
