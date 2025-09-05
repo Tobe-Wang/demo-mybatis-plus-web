@@ -67,6 +67,12 @@
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
             <version>3.5.12</version>
         </dependency>
+        <!-- MyBatis-Plus分页插件 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-jsqlparser</artifactId>
+            <version>3.5.14</version>
+        </dependency>
         <!-- MyBatis-Plus代码生成器 -->
         <dependency>
             <groupId>com.baomidou</groupId>
