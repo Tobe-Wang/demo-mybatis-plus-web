@@ -42,4 +42,8 @@ public class SysAddress implements Serializable {
 
     @TableField("userid")
     private Integer userid;
+    /**
+     * 分组统计字段：数量
+     */
+    private Integer groupCount;
 }
