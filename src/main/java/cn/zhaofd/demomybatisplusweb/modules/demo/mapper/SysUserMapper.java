@@ -13,7 +13,7 @@ import java.util.List;
  * <p>
  * 系统用户 Mapper 接口
  * </p>
- * 直接调用“MyBatis-Plus代码生成器”代码应用示例+手动xml方式配置的MyBatis应用示例
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+手动xml方式配置的MyBatis应用示例
  *
  * @author zhaofd
  * @since 2025-09-02

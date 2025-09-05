@@ -4,8 +4,8 @@
 
 package cn.zhaofd.demomybatisplusweb.modules.demo.service.intf;
 
+import cn.zhaofd.core.spring.mybatisplus.core.service.intf.BaseService;
 import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysUser;
-import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 
@@ -13,12 +13,12 @@ import java.util.List;
  * <p>
  * 系统用户 服务类
  * </p>
- * 直接调用“MyBatis-Plus代码生成器”代码应用示例+手动xml方式配置的MyBatis应用示例
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+手动xml方式配置的MyBatis应用示例
  *
  * @author zhaofd
  * @since 2025-09-02
  */
-public interface SysUserService extends IService<SysUser> {
+public interface SysUserService extends BaseService<SysUser> {
     /**
      * 调用存储过程
      *

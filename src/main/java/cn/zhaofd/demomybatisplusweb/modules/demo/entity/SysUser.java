@@ -4,6 +4,7 @@
 
 package cn.zhaofd.demomybatisplusweb.modules.demo.entity;
 
+import cn.zhaofd.demomybatisplusweb.modules.type.SexType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -22,7 +23,7 @@ import java.time.LocalDateTime;
  * <p>
  * 系统用户
  * </p>
- * 直接调用“MyBatis-Plus代码生成器”代码应用示例+手动xml方式配置的MyBatis应用示例
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+手动xml方式配置的MyBatis应用示例
  *
  * @author zhaofd
  * @since 2025-09-02
@@ -49,9 +50,10 @@ public class SysUser implements Serializable {
 
     /**
      * 性别
+     * <br />枚举示例
      */
     @TableField("sex")
-    private String sex;
+    private SexType sex;
 
     /**
      * 登记时间
