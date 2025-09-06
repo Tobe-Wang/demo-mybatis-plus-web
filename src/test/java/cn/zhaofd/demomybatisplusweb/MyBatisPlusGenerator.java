@@ -44,11 +44,6 @@ public class MyBatisPlusGenerator {
      * ★注意：代码生成前需配置★
      */
     private static final String pathInfo = "src\\main\\resources\\mapper\\demo";
-    /**
-     * 表字段填充
-     * ★注意：代码生成前需配置★
-     */
-    private static final List<IFill> fills = Arrays.asList(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE));
 
     /**
      * 数据源配置
@@ -74,6 +69,18 @@ public class MyBatisPlusGenerator {
      * 输出目录
      */
     private static final String outputDir = "src\\main\\java";
+    /**
+     * 表字段填充
+     */
+    private static final List<IFill> fills = Arrays.asList(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE));
+    /**
+     * 逻辑删除字段名(数据库字段)
+     */
+    private static final String logicDelColumn = "deleted";
+    /**
+     * 逻辑删除属性名(实体)
+     */
+    private static final String logicDelProperty = "deleted";
 
     /**
      * 代码生成
@@ -127,8 +134,8 @@ public class MyBatisPlusGenerator {
                             .enableTableFieldAnnotation() // 开启生成实体时生成字段注解
 //                            .versionColumnName("") // 乐观锁字段名(数据库字段)
 //                            .versionPropertyName("") // 乐观锁属性名(实体)
-//                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
-//                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
+                            .logicDeleteColumnName(logicDelColumn) // 逻辑删除字段名(数据库字段)
+                            .logicDeletePropertyName(logicDelProperty) // 逻辑删除属性名(实体)
                             .addTableFills(fills) // 添加表字段填充
                     ;
 
