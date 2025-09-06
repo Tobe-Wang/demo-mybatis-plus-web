@@ -63,6 +63,21 @@ insert into sys_param(id, code, value, regtime) values(1, 'code1', '1', '2020-01
 select * from sys_param;
 */
 
+drop table if exists sys_code;
+create table sys_code(
+    id int not null auto_increment,
+    code varchar(10),
+    value varchar(10),
+    regtime datetime,
+    primary key (id)
+);
+
+-- truncate table sys_code;
+insert into sys_code(id, code, value, regtime) values(1, 'code1', '1', '2020-01-01 01:01:01'), (2, 'code2', '2', '2022-02-02 02:02:02');
+/*
+select * from sys_code;
+*/
+
 -- 存储过程
 drop procedure if exists proc_user;
 create procedure proc_user(in p_name varchar(10))
