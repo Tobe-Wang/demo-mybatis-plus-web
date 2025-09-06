@@ -22,7 +22,8 @@ public class FillMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void insertFill(MetaObject metaObject) {
-        this.strictInsertFill(metaObject, "rcreatetime", LocalDateTime.class, LocalDateTime.now());
+        this.strictInsertFill(metaObject, "deleted", Boolean.class, false); // 逻辑删除字段
+        this.strictInsertFill(metaObject, "rcreatetime", LocalDateTime.class, LocalDateTime.now()); // 记录创建时间字段
     }
 
     /**
@@ -32,6 +33,6 @@ public class FillMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.strictUpdateFill(metaObject, "rupdatetime", LocalDateTime.class, LocalDateTime.now());
+        this.strictUpdateFill(metaObject, "rupdatetime", LocalDateTime.class, LocalDateTime.now()); // 记录更新时间字段
     }
 }
