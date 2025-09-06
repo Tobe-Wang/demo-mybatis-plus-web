@@ -7,10 +7,12 @@ package cn.zhaofd.demomybatisplusweb;
 import cn.zhaofd.core.spring.mybatisplus.core.service.BaseServiceImpl;
 import cn.zhaofd.core.spring.mybatisplus.core.service.intf.BaseService;
 import cn.zhaofd.core.spring.mybatisplus.core.web.BaseController;
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.builder.CustomFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.baomidou.mybatisplus.generator.fill.Column;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,7 +27,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_address";
+    private static final String tables = "sys_info";
     /**
      * 父包名
      * ★注意：代码生成前需配置★
@@ -121,6 +123,7 @@ public class MyBatisPlusGenerator {
 //                            .versionPropertyName("") // 乐观锁属性名(实体)
 //                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
 //                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
+                            .addTableFills(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE)) // 添加表字段填充
                     ;
 
                     // Service策略配置
