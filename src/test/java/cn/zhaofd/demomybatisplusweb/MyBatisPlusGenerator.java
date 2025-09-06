@@ -9,6 +9,7 @@ import cn.zhaofd.core.spring.mybatisplus.core.service.intf.BaseService;
 import cn.zhaofd.core.spring.mybatisplus.core.web.BaseController;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
+import com.baomidou.mybatisplus.generator.IFill;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.builder.CustomFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
@@ -43,6 +44,11 @@ public class MyBatisPlusGenerator {
      * ★注意：代码生成前需配置★
      */
     private static final String pathInfo = "src\\main\\resources\\mapper\\demo";
+    /**
+     * 表字段填充
+     * ★注意：代码生成前需配置★
+     */
+    private static final List<IFill> fills = Arrays.asList(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE));
 
     /**
      * 数据源配置
@@ -123,7 +129,7 @@ public class MyBatisPlusGenerator {
 //                            .versionPropertyName("") // 乐观锁属性名(实体)
 //                            .logicDeleteColumnName("") // 逻辑删除字段名(数据库字段)
 //                            .logicDeletePropertyName("") // 逻辑删除属性名(实体)
-                            .addTableFills(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE)) // 添加表字段填充
+                            .addTableFills(fills) // 添加表字段填充
                     ;
 
                     // Service策略配置
