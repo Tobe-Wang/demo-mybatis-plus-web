@@ -28,7 +28,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_info";
+    private static final String tables = "sys_code";
     /**
      * 父包名
      * ★注意：代码生成前需配置★
@@ -70,10 +70,6 @@ public class MyBatisPlusGenerator {
      */
     private static final String outputDir = "src\\main\\java";
     /**
-     * 表字段填充
-     */
-    private static final List<IFill> fills = Arrays.asList(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE));
-    /**
      * 逻辑删除字段名(数据库字段)
      */
     private static final String logicDelColumn = "deleted";
@@ -81,6 +77,10 @@ public class MyBatisPlusGenerator {
      * 逻辑删除属性名(实体)
      */
     private static final String logicDelProperty = "deleted";
+    /**
+     * 表字段填充
+     */
+    private static final List<IFill> fills = Arrays.asList(new Column("rcreatetime", FieldFill.INSERT), new Column("rupdatetime", FieldFill.UPDATE), new Column(logicDelProperty, FieldFill.INSERT));
 
     /**
      * 代码生成
