@@ -69,6 +69,7 @@ create table sys_code(
     code varchar(10),
     value varchar(10),
     regtime datetime,
+    deleted tinyint(1) comment '逻辑删除',
     primary key (id)
 );
 
