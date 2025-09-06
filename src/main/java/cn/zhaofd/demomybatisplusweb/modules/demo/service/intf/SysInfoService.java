@@ -11,6 +11,7 @@ import cn.zhaofd.demomybatisplusweb.modules.demo.entity.SysInfo;
  * <p>
  *  服务类
  * </p>
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+自动填充字段示例
  *
  * @author zhaofd
  * @since 2025-09-06
