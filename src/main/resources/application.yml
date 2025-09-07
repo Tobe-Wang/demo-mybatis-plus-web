@@ -43,7 +43,7 @@ server:
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml # 配置mapper的xml路径
   type-aliases-package: cn.zhaofd.demomybatisplusweb.modules.demo.entity # 配置对象类的别名扫描的包(包使用的分隔符是“,或;或\t或\n”)。无@Alias注解时，自动使用类名的首字母小写形式(如User->user)；有@Alias注解时优先使用注解值；
-#  type-handlers-package: cn.zhaofd.demomybatisweb.config.typehandler # 配置自定义类型处理器包，需要与@MappedJdbcTypes注解一起使用
+  type-handlers-package: cn.zhaofd.demomybatisplusweb.config.typehandler # 配置自定义类型处理器包，需要与@MappedJdbcTypes注解一起使用
   executor-type: reuse # 配置执行器类型，默认为simple。simple就是普通的执行器；reuse执行器会重用预处理语句（PreparedStatement）；batch执行器不仅重用语句还会执行批量更新。
   configuration:
     map-underscore-to-camel-case: true # 配置是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。
