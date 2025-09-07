@@ -42,9 +42,11 @@ public class YmlDataEncryptTest {
         String devMySQLPassword = "pwd@123QWE"; // MySQL密码
         // 生产环境
 
-//        2025-09-07 08:10:22.734 [main] INFO  c.z.d.YmlDataEncryptTest - MySQL连接地址：mpw:wNkRJDgNypDKnfq0EnuejdgXe+wgD4dBtihzXq4Zyxims5K60XXfEVH+DchN098GN31DeS+N8qNeTZ5ihiLBzPbBcaeuqbVMq6j2dsVKabEBnlSSsrltVEAvEvmpmbez/f33n5Yz5YoxjHyicuPylShj0yolkyrsUq+6Coesmxg343EDJMtbeSwbAnJ5ryuc
-//        2025-09-07 08:10:22.740 [main] INFO  c.z.d.YmlDataEncryptTest - MySQL用户名：mpw:Kmp/OLciH5DfBWC0XndCSQ==
-//        2025-09-07 08:10:22.740 [main] INFO  c.z.d.YmlDataEncryptTest - MySQL密码：mpw:8qdhLVJcOfY4wQl3dkarVQ==
+        /*
+        2025-09-07 08:10:22.734 [main] INFO  c.z.d.YmlDataEncryptTest - MySQL连接地址：mpw:wNkRJDgNypDKnfq0EnuejdgXe+wgD4dBtihzXq4Zyxims5K60XXfEVH+DchN098GN31DeS+N8qNeTZ5ihiLBzPbBcaeuqbVMq6j2dsVKabEBnlSSsrltVEAvEvmpmbez/f33n5Yz5YoxjHyicuPylShj0yolkyrsUq+6Coesmxg343EDJMtbeSwbAnJ5ryuc
+        2025-09-07 08:10:22.740 [main] INFO  c.z.d.YmlDataEncryptTest - MySQL用户名：mpw:Kmp/OLciH5DfBWC0XndCSQ==
+        2025-09-07 08:10:22.740 [main] INFO  c.z.d.YmlDataEncryptTest - MySQL密码：mpw:8qdhLVJcOfY4wQl3dkarVQ==
+        */
         log.info("MySQL连接地址：mpw:{}", AES.encrypt(devMySQLUrl, aesKey));
         log.info("MySQL用户名：mpw:{}", AES.encrypt(devMySQLUsername, aesKey));
         log.info("MySQL密码：mpw:{}", AES.encrypt(devMySQLPassword, aesKey));
