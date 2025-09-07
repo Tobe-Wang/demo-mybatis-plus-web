@@ -93,6 +93,20 @@ insert into sys_detail(name, otherinfo) values('详情1', '{"phone":"13777477222
 select * from sys_detail;
 */
 
+drop table if exists sys_test;
+create table sys_test(
+    id int not null auto_increment,
+    name varchar(32),
+    regtime datetime,
+    primary key (id)
+);
+
+-- truncate table sys_test;
+insert into sys_test(name, regtime) values('test1', '2020-01-01 01:01:01');
+/*
+select * from sys_test;
+*/
+
 -- 存储过程
 drop procedure if exists proc_user;
 create procedure proc_user(in p_name varchar(10))
