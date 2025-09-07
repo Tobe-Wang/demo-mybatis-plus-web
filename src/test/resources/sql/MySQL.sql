@@ -97,12 +97,13 @@ drop table if exists sys_test;
 create table sys_test(
     id int not null auto_increment,
     name varchar(32),
+    version int comment '乐观锁',
     regtime datetime,
     primary key (id)
 );
 
 -- truncate table sys_test;
-insert into sys_test(name, regtime) values('test1', '2020-01-01 01:01:01');
+insert into sys_test(name, version, regtime) values('test1', 1, '2020-01-01 01:01:01');
 /*
 select * from sys_test;
 */
