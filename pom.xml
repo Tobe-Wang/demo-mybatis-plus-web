@@ -67,7 +67,7 @@
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
             <version>3.5.14</version>
         </dependency>
-        <!-- MyBatis-Plus分页插件 -->
+        <!-- MyBatis-Plus SQL解析库，解析和修改SQL语句(分页插件依赖) -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-jsqlparser</artifactId>
