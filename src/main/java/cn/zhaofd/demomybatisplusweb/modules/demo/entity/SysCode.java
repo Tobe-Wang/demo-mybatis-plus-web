@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+逻辑删除示例
  * </p>
  *
  * @author zhaofd

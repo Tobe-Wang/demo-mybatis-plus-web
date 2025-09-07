@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
  * <p>
  *  服务实现类
  * </p>
+ * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+逻辑删除示例
  *
  * @author zhaofd
  * @since 2025-09-06
