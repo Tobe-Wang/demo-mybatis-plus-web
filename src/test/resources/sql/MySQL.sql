@@ -79,6 +79,20 @@ insert into sys_code(id, code, value, regtime) values(1, 'code1', '1', '2020-01-
 select * from sys_code;
 */
 
+drop table if exists sys_detail;
+create table sys_detail(
+    id int not null auto_increment,
+    name varchar(32),
+    otherinfo json comment '其它信息',
+    primary key (id)
+);
+
+-- truncate table sys_detail;
+insert into sys_detail(name, otherinfo) values('详情1', '{"phone":"13777477222"}');
+/*
+select * from sys_detail;
+*/
+
 -- 存储过程
 drop procedure if exists proc_user;
 create procedure proc_user(in p_name varchar(10))
