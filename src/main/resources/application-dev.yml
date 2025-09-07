@@ -4,9 +4,12 @@
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
-    username: root
-    password: pwd@123QWE
+#    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    url: mpw:wNkRJDgNypDKnfq0EnuejdgXe+wgD4dBtihzXq4Zyxims5K60XXfEVH+DchN098GN31DeS+N8qNeTZ5ihiLBzPbBcaeuqbVMq6j2dsVKabEBnlSSsrltVEAvEvmpmbez/f33n5Yz5YoxjHyicuPylShj0yolkyrsUq+6Coesmxg343EDJMtbeSwbAnJ5ryuc
+#    username: root
+    username: mpw:Kmp/OLciH5DfBWC0XndCSQ==
+#    password: pwd@123QWE
+    password: mpw:8qdhLVJcOfY4wQl3dkarVQ==
     hikari: # HikariCP连接池(spring boot默认连接池)
       connection-timeout: 30000 # 连接超时时间 (毫秒)，默认 30000 (30秒)
       idle-timeout: 600000 # 空闲连接超时时间 (毫秒)，默认 600000 (10分钟)
