@@ -87,6 +87,18 @@
             <version>2.3.34</version>
             <scope>test</scope>
         </dependency>
+        <!-- FST高性能序列化库(用于配置本地缓存SQL解析) -->
+        <dependency>
+            <groupId>de.ruedigermoeller</groupId>
+            <artifactId>fst</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <!-- caffeine(用于配置本地缓存SQL解析) -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>3.2.2</version>
+        </dependency>
         <!-- MyBatis结束 -->
 
         <!-- core开始 -->
