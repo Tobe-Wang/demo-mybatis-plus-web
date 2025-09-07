@@ -70,6 +70,14 @@ public class MyBatisPlusGenerator {
      */
     private static final String outputDir = "src\\main\\java";
     /**
+     * 乐观锁字段名(数据库字段)
+     */
+    private static final String versionColumn = "version";
+    /**
+     * 乐观锁属性名(实体)
+     */
+    private static final String versionProperty = "version";
+    /**
      * 逻辑删除字段名(数据库字段)
      */
     private static final String logicDelColumn = "deleted";
@@ -132,8 +140,8 @@ public class MyBatisPlusGenerator {
                     builder.entityBuilder() // 启用Entity策略配置
                             .enableLombok() // 启用Lombok
                             .enableTableFieldAnnotation() // 开启生成实体时生成字段注解
-//                            .versionColumnName("") // 乐观锁字段名(数据库字段)
-//                            .versionPropertyName("") // 乐观锁属性名(实体)
+                            .versionColumnName(versionColumn) // 乐观锁字段名(数据库字段)
+                            .versionPropertyName(versionProperty) // 乐观锁属性名(实体)
                             .logicDeleteColumnName(logicDelColumn) // 逻辑删除字段名(数据库字段)
                             .logicDeletePropertyName(logicDelProperty) // 逻辑删除属性名(实体)
                             .addTableFills(fills) // 添加表字段填充
