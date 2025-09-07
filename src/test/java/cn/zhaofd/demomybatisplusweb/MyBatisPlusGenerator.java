@@ -28,7 +28,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_code";
+    private static final String tables = "sys_detail";
     /**
      * 父包名
      * ★注意：代码生成前需配置★
