@@ -52,7 +52,7 @@ public class MyBatisPlusGenerator {
      * 2、Oracle链接增加属性：remarks=true或者remarksReporting=true（某些驱动版本）
      * 3、SqlServer：驱动不支持
      */
-    private static final String url = "jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&remarks=true&useInformationSchema=true&tinyInt1isBit=false";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&remarks=true&useInformationSchema=true&tinyInt1isBit=true";
     /**
      * 数据源用户名
      */
