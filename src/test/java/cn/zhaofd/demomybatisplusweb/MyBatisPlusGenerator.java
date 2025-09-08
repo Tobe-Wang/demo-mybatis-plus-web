@@ -28,7 +28,7 @@ public class MyBatisPlusGenerator {
      * 需要生成的表名(多个以英文逗号分隔)
      * ★注意：代码生成前需配置★
      */
-    private static final String tables = "sys_test";
+    private static final String tables = "sys_deleted";
     /**
      * 父包名
      * ★注意：代码生成前需配置★
@@ -52,7 +52,7 @@ public class MyBatisPlusGenerator {
      * 2、Oracle链接增加属性：remarks=true或者remarksReporting=true（某些驱动版本）
      * 3、SqlServer：驱动不支持
      */
-    private static final String url = "jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&remarks=true&useInformationSchema=true";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&remarks=true&useInformationSchema=true&tinyInt1isBit=false";
     /**
      * 数据源用户名
      */
