@@ -108,6 +108,20 @@ insert into sys_test(name, version, regtime) values('test1', 1, '2020-01-01 01:0
 select * from sys_test;
 */
 
+drop table if exists sys_deleted;
+create table sys_deleted(
+    id int not null auto_increment,
+    code varchar(10),
+    deleted tinyint(1) comment '逻辑删除',
+    primary key (id)
+);
+
+-- truncate table sys_deleted;
+insert into sys_deleted(id, code, deleted) values(1, 'code1', '0');
+/*
+select * from sys_deleted;
+*/
+
 -- 存储过程
 drop procedure if exists proc_user;
 create procedure proc_user(in p_name varchar(10))
