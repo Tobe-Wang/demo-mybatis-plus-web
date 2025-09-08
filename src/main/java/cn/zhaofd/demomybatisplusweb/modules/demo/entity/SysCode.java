@@ -39,7 +39,7 @@ public class SysCode implements Serializable {
     @TableField("value")
     private String value;
 
-    @TableField("regtime")
+    @TableField(value = "regtime", updateStrategy = FieldStrategy.ALWAYS)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") // Spring框架注解，用于前端到后端的数据绑定（HTTP请求参数->Java对象）
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Shanghai") // Jackson库注解，用于JSON序列化和反序列化（Java对象<->JSON字符串）
     private LocalDateTime regtime;
