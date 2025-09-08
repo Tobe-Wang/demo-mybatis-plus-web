@@ -48,3 +48,6 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true # 配置是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。
     local-cache-scope: statement # Mybatis一级缓存，默认为session。session：同一个Session相同查询语句不会再次查询数据库；statement：关闭一级缓存(微服务架构中需要关闭一级缓存)
+  global-config:
+    db-config:
+      update-strategy: not_null # 配置数据库字段更新策略。默认not_null，表示仅在字段不为null时更新(建议采用默认，在需要更新为NULL的字段上添加注解，例@TableField(value = "name", updateStrategy = FieldStrategy.ALWAYS))；always总是更新该字段；not_empty仅在字段值不为空（对于字符串类型）或不为 NULL（对于其他类型）时更新该字段；never从不插入该字段；default遵循全局配置的策略，如果全局配置未指定，默认行为是仅在字段值不为NULL时更新该字段
