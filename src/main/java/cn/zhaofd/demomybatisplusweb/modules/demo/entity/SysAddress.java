@@ -46,6 +46,5 @@ public class SysAddress implements Serializable {
      * 分组统计字段：数量
      */
     @TableField(exist = false)
-//    @Transient
     private Integer groupCount;
 }
