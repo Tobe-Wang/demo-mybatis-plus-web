@@ -73,7 +73,7 @@ public class SysParamController {
     public SysParam save(@Valid @RequestBody SysParam dto, Errors errors) {
         // 输入参数验证
         if (errors.hasErrors()) {
-            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getFieldErrorMsg(errors));
+            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getErrorMsg(errors));
         }
 
         return sysParamService.save(dto) ? dto : null;
@@ -94,7 +94,7 @@ public class SysParamController {
             throw new HttpException(HttpStatus.BAD_REQUEST.value(), "接口参数不能为空");
         }
         if (errors.hasErrors()) {
-            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getFieldErrorMsg(errors));
+            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getErrorMsg(errors));
         }
 
         return sysParamService.save(dto) ? dto : null;
@@ -137,7 +137,7 @@ public class SysParamController {
     public SysParam updateById(@Valid @RequestBody SysParam dto, Errors errors) {
         // 输入参数验证
         if (errors.hasErrors()) {
-            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getFieldErrorMsg(errors));
+            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getErrorMsg(errors));
         }
 
         return sysParamService.updateById(dto) ? dto : null;
@@ -157,7 +157,7 @@ public class SysParamController {
             throw new HttpException(HttpStatus.BAD_REQUEST.value(), "接口参数不能为空");
         }
         if (errors.hasErrors()) {
-            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getFieldErrorMsg(errors));
+            throw new HttpException(HttpStatus.BAD_REQUEST.value(), ValidationUtil.getErrorMsg(errors));
         }
 
         return sysParamService.updateById(dto) ? dto : null;
