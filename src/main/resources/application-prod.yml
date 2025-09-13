@@ -23,7 +23,7 @@ spring:
       # TRANSACTION_READ_COMMITTED    读写提交
       # TRANSACTION_REPEATABLE_READ   可重复读
       # TRANSACTION_SERIALIZABLE      串行化
-      transaction-isolation: TRANSACTION_READ_COMMITTED
+      transaction-isolation: TRANSACTION_REPEATABLE_READ
   cache:
     type: redis # 缓存类型
     redis:
