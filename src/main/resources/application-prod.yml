@@ -17,6 +17,13 @@ spring:
       auto-commit: true # 是否自动提交事务，默认 true
       connection-test-query: SELECT 1 # 简单的测试 SQL (MySQL, PostgreSQL, H2等适用)
       validation-timeout: 5000 # 验证查询超时时间 (毫秒)，默认 5000
+      # 配置Hikari数据源默认隔离级别
+      # 不同的数据库的支持是不一样的：Oracle只能支持读写提交和串行化(默认的隔离级别为读写提交)；MySQL支持4种(默认隔离级别可重复读)
+      # TRANSACTION_READ_UNCOMMITTED  未提交读
+      # TRANSACTION_READ_COMMITTED    读写提交
+      # TRANSACTION_REPEATABLE_READ   可重复读
+      # TRANSACTION_SERIALIZABLE      串行化
+      transaction-isolation: TRANSACTION_REPEATABLE_READ
   cache:
     type: redis # 缓存类型
     redis:
