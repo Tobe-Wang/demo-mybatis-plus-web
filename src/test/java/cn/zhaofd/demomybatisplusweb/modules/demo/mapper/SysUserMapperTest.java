@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 直接调用“MyBatis-Plus代码生成器”生成继承自定义父类的代码应用示例+手动xml方式配置的MyBatis应用示例
  */
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // 使用随机端口启动测试服务
 class SysUserMapperTest {
     @Autowired
     private SysUserMapper sysUserMapper;
